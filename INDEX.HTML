@@ -4,263 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Bordalesa</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Aquí se vincula el archivo CSS -->
     <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            position: relative; /* Asegura que el footer se mantenga en la parte inferior */
-            min-height: 100vh; /* Asegura que el contenido ocupe al menos toda la altura de la pantalla */
-        }
-
-        h1 {
-            font-size: 2.5em;
-            color: gold; /* Cambia a dorado */
-            text-decoration: underline;
-            margin: 20px 0;
-        }
-
-        h2 {
+        header nav ul li a {
             font-size: 1.5em;
-            margin: 10px 0;
-        }
-
-        .carousel {
-            width: 50%; /* Ajusta el ancho del carrusel a la mitad */
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid white; /* Agrega un borde para mayor visibilidad */
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease;
-            width: 100%; /* Asegúrate de que ocupa el 100% del contenedor */
-        }
-
-        .slide {
-            min-width: 100%; /* Asegúrate de que cada slide ocupa el 100% del contenedor */
-            position: relative;
-        }
-
-        .carousel-images img {
-            width: 20%;
-            max-height: 250px; /* Ajusta la altura de las imágenes */
-            object-fit: cover; /* Mantiene la proporción de la imagen */
-        }
-
-        .description {
-            font-size: 1.2em;
-            font-style: italic;
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            text-shadow: 1px 1px 5px black; /* Agrega un poco de sombra para destacar el texto */
-        }
-
-        .navigation {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        .nav-button {
-            background-color: gold; /* Color dorado para los botones */
-            border: none;
-            color: black;
-            padding: 10px;
+            font-weight: bold;
             cursor: pointer;
-            font-size: 1.5em;
-            border-radius: 5px;
-            transition: background-color 0.3s;
         }
-
-        .nav-button:hover {
-            background-color: rgba(255, 215, 0, 0.8); /* Cambia a un tono más claro al pasar el mouse */
+        .section-content {
+            display: none; /* Oculta las secciones adicionales por defecto */
+            margin-top: 20px;
         }
-
-        footer {
-            display: flex;
-            justify-content: space-between; /* Espacia los elementos a los lados */
-            align-items: center; /* Centra verticalmente los elementos */
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            position: absolute; /* Fija el footer en la parte inferior */
-            bottom: 0; /* Alinea el footer en la parte inferior */
-            left: 0;
-            right: 0;
-        }
-
-        .social-buttons {
-            display: flex;
-        }
-
-        .social-button {
-            border-radius: 5px;
-            padding: 10px 15px;
-            margin-left: 10px; /* Espacio entre los botones */
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 1em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .social-button i {
-            margin-right: 5px; /* Espacio entre icono y texto */
-        }
-
-        .social-button:hover {
-            opacity: 0.8; /* Efecto hover */
-        }
-
-        /* Colores específicos para cada botón */
-        .whatsapp {
-            background-color: #25D366; /* Verde de WhatsApp */
-            color: white;
-        }
-
-        .instagram {
-            background-color: #E1306C; /* Color de Instagram */
-            color: white;
-        }
-
-        .google-maps {
-            background-color: #4285F4; /* Color de Google Maps */
-            color: white;
-        }
-
-        .address {
-            font-size: 1em;
-            text-align: left; /* Alinea a la izquierda */
-        }
-
-        /* Añadir espacio a los lados del carrusel */
-        .carousel-container {
-            display: flex;
-            justify-content: center;
-            padding: 20px; /* Espacio alrededor del carrusel */
-        }
-
-        /* Estilo para la nueva sección de imagen */
-        .image-section {
-            margin: 20px 0; /* Margen alrededor de la sección */
-        }
-
-        .image-section img {
-            width: 50%; /* Ajustar el ancho de la imagen */
-            max-width: 500px; /* Máximo ancho para pantallas grandes */
-            height: auto; /* Mantiene la proporción de la imagen */
-        }
-
-        .image-section p {
-            font-size: 1.2em; /* Tamaño del texto */
-            color: gold; /* Color dorado para el texto */
-            margin-top: 10px; /* Espacio entre la imagen y el texto */
+        .section-content img {
+            width: 100px;
+            height: auto;
+            margin: 5px;
         }
     </style>
+    <script>
+        function toggleSection(sectionId) {
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>La Bordalesa</h1>
-        <h2>DELICATESSEN</h2>
+        <img src="https://i.imgur.com/vatQYL7.png" alt="La Bordalesa" style="width: 250px; height: auto;">
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a onclick="toggleSection('vinos-content')">Vinos</a></li>
+                <li><a onclick="toggleSection('cervezas-content')">Cervezas Artesanales</a></li>
+                <li><a onclick="toggleSection('delicatessen-content')">Delicatessen</a></li>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-images">
-                <div class="slide">
-                    <img src="https://i.imgur.com/y88LKWW.png" alt="Vino Tinto">
-                    <div class="description">Un delicioso vino tinto.</div>
-                </div>
-                <div class="slide">
-                    <img src="https://i.imgur.com/bjfEdyZ.png" alt="Vino Blanco">
-                    <div class="description">Refrescante vino blanco.</div>
-                </div>
-                <div class="slide">
-                    <img src="https://i.imgur.com/lN4w4ip.png" alt="Botella de Vino">
-                    <div class="description">Botella de vino premium.</div>
-                </div>
-                <div class="slide">
-                    <img src="https://i.imgur.com/cFqVOrU.png" alt="Viñedo">
-                    <div class="description">Viñedos en plena cosecha.</div>
-                </div>
-                <div class="slide">
-                    <img src="https://i.imgur.com/GJ6xh5x.png" alt="Copa de Vino">
-                    <div class="description">Una copa de vino elegante.</div>
-                </div>
-            </div>
-            <div class="navigation">
-                <button class="nav-button" id="prevBtn">&#10094;</button>
-                <button class="nav-button" id="nextBtn">&#10095;</button>
-            </div>
-        </div>
-    </div>
+    <main>
+        <section id="inicio">
+            <h1>Bienvenidos a La Bordalesa</h1>
+            <p>Delicatessen y productos autóctonos con un toque elegante.</p>
+        </section>
 
-    <!-- Nueva sección de imagen -->
-    <div class="image-section">
-        <img src="https://i.imgur.com/tpirYeb.png" alt="Vino sirviendo en una copa">
-        <p>Disfruta de una experiencia única con nuestros vinos.</p>
-        <ol>
-            <li><strong>Preparación y Ambiente:</strong> Elige un vino que te interese y asegúrate de que esté a la temperatura adecuada (15-18°C para tintos, 8-12°C para blancos). Busca un lugar tranquilo y bien iluminado.</li>
-            <li><strong>Observación Visual:</strong> Usa una copa adecuada y observa el color y la claridad del vino inclinando la copa sobre un fondo blanco. Esto te ayudará a apreciar sus características visuales.</li>
-            <li><strong>Apreciación Olfativa:</strong> Acércate la copa a la nariz y inhala suavemente. Identifica los aromas iniciales y, al girar la copa, descubre notas más sutiles.</li>
-            <li><strong>Degustación y Reflexión:</strong> Toma un pequeño sorbo y deja que el vino cubra tu lengua, prestando atención a los sabores y la textura. Evalúa el retrogusto y anota tus impresiones para recordar lo que has degustado.</li>
-        </ol>
-    </div>
+        <!-- Sección de Vinos -->
+        <section id="vinos-content" class="section-content">
+            <h2>Nuestra Selección de Vinos</h2>
+            <div>
+                <img src="https://i.imgur.com/y88LKWW_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="Vino 1">
+                <img src="https://i.imgur.com/uAGtFj7.png" alt="Vino 2">
+                <img src="https://i.imgur.com/Wp09Xie.png" alt="Vino 3">
+            </div>
+        </section>
+
+        <!-- Sección de Cervezas Artesanales -->
+        <section id="cervezas-content" class="section-content">
+            <h2>Nuestra Selección de Cervezas Artesanales</h2>
+            <div>
+                <img src="https://i.imgur.com/rjfND8x.png" alt="Cerveza 1">
+                <img src="https://i.imgur.com/9rWtjQF.png" alt="Cerveza 2">
+                <img src="https://i.imgur.com/NYQrydq.png" alt="Cerveza 3">
+            </div>
+        </section>
+
+        <!-- Sección de Delicatessen -->
+        <section id="delicatessen-content" class="section-content">
+            <h2>Nuestra Selección de Delicatessen</h2>
+            <div>
+                <img src="https://via.placeholder.com/100x150?text=Producto1" alt="Delicatessen 1">
+                <img src="https://via.placeholder.com/100x150?text=Producto2" alt="Delicatessen 2">
+                <img src="https://via.placeholder.com/100x150?text=Producto3" alt="Delicatessen 3">
+            </div>
+        </section>
+
+        <section id="nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>Conoce la historia y filosofía de La Bordalesa.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Encuéntranos en nuestras redes sociales o visítanos.</p>
+        
+            <!-- Redes Sociales -->
+            <div class="social-buttons">
+                <a href="https://wa.me/543512039886?text=👋%20Hola%20😊%20Quería%20hacerte%20una%20consulta%20sobre%20tus%20productos" target="_blank" title="WhatsApp">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" style="width: 40px; height: 40px; margin: 5px;">
+                </a>
+                <a href="https://instagram.com" target="_blank" title="Instagram">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 40px; height: 40px; margin: 5px;">
+                </a>
+                <a href="https://www.google.com.ar/maps/place/LA+BORDALESA+%E2%80%93+Delicatessen/@-31.258295,-64.5017849,11z/data=!4m10!1m2!2m1!1sla+bordalessa!3m6!1s0x9432a28878ccc50d:0xc01d832ab6fb5b3f!8m2!3d-31.4249385!4d-64.19256!15sCgxsYSBib3JkYWxlc2FaDiIMbGEgYm9yZGFsZXNhkgEEZGVsaeABAA!16s%2Fg%2F11bw2g74_w?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="Google Maps">
+                    <img src="https://img.icons8.com/color/48/000000/google-maps.png" alt="Google Maps" style="width: 40px; height: 40px; margin: 5px;">
+                </a>
+            </div>
+        </section>
+        
+    </main>
 
     <footer>
-        <div class="address">
-            Calle Guemes 860 local 7<br>
-            Paseo de las Artes<br>
-            Córdoba - Capital
-        </div>
-        <div class="social-buttons">
-            <a href="https://wa.me/5493512039886?text=%F0%9F%91%8B%20Hola%20😊%20Quer%C3%ADa%20hacerte%20una%20consulta%20sobre%20tus%20productos%20%F0%9F%92%A1" class="social-button whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <a href="https://www.instagram.com/tu_usuario" class="social-button instagram" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="https://www.google.com/maps/place/LA+BORDALESA+%E2%80%93+Delicatessen/@-31.4249385,-64.1951349,17z/data=!3m1!4b1!4m6!3m5!1s0x9432a28878ccc50d:0xc01d832ab6fb5b3f!8m2!3d-31.4249385!4d-64.19256!16s%2Fg%2F11bw2g74_w?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" class="social-button google-maps" target="_blank">
-                <i class="fas fa-map-marker-alt"></i> Google Maps
-            </a>
-        </div>
+        <p>&copy; 2024 La Bordalesa Delicatessen. Todos los derechos reservados.</p>
     </footer>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        });
-
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        });
-
-        function updateCarousel() {
-            const carouselImages = document.querySelector('.carousel-images');
-            const offset = -currentSlide * 100;
-            carouselImages.style.transform = `translateX(${offset}%)`;
-        }
-    </script>
 </body>
 </html>

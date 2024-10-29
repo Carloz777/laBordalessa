@@ -1,0 +1,86 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #d4af37;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+form input, form textarea, form button {
+    grid-column: span 2;
+    padding: 10px;
+}
+
+form button {
+    background-color: #d4af37;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo para el encabezado */
+header nav ul li a {
+    font-size: 1.5em; /* Aumenta el tamaño de las letras del menú de navegación */
+    font-weight: bold; /* Opcional: hace que el texto esté en negrita */
+}
+
+/* Estilo general para el cuerpo */
+body {
+    font-size: 1em; /* Tamaño estándar de letra para el cuerpo */
+}
+
+/* Encabezados en el cuerpo */
+main h1 {
+    font-size: 2em; /* Para el título principal de bienvenida */
+}
+
+main h2 {
+    font-size: 1.5em; /* Para los títulos de cada sección */
+}
